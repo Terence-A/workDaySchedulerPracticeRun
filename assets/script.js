@@ -48,13 +48,16 @@ $(function () {
   const setItemBlocks = () => {
     let getItems = JSON.parse(localStorage.getItem("storeData")) || [];
 
-    for (let i = 0; i <= timeBlock.length; i++) {
+    for (let i = 0; i < timeBlock.length; i++) {
+      if (timeBlock[i].dataset.id === getItems[i].time) {
+        console.log(timeBlock[i].dataset.id + " : " + getItems[i].time);
+      }
       //   console.log(timeBlock[i].dataset.id);
-      console.log(getItems[i].time);
-      //   if (timeBlock[i].dataset.id == getItems[i].text) {
-      //     console.log(getItems[i].time + ": " + getItems[i].text);
-      //     $(`#hour-${getItems[i].time} .description`).val(text);
-      //   }
+      // console.log(getItems[i].time);
+      // if (timeBlock[i].dataset.id == getItems[i].text) {
+      //   console.log(getItems[i].time + ": " + getItems[i].text);
+      //   $(`#hour-${getItems[i].time} .description`).val(text);
+      // }
     }
     // console.log(getItems[0].time + ": " + getItems[0].text);
   };
